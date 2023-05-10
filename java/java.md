@@ -14,9 +14,9 @@ JVM 内存区域主要分为线程私有区域【程序计数器、虚拟机栈�
 
 JDK 1.8 和之前的版本略有不同，我们这里以 JDK 1.7 和 JDK 1.8 这两个版本为例介绍。
 
-<img src="D:\Data\笔记\java\java.assets\java-runtime-data-areas-jdk1.7.png" alt="Java 运行时数据区域（JDK1.7）" style="zoom:67%;" />
+<img src="./java.assets/java-runtime-data-areas-jdk1.7.png" alt="Java 运行时数据区域（JDK1.7）" style="zoom:67%;" />
 
-<img src="https://oss.javaguide.cn/github/javaguide/java/jvm/java-runtime-data-areas-jdk1.8.png" alt="Java 运行时数据区域（JDK1.8 ）" style="zoom: 67%;" />
+<img src="java.assets/java-runtime-data-areas-jdk1.8.png" alt="Java 运行时数据区域（JDK1.8 ）" style="zoom: 67%;" />
 
 
 
@@ -60,7 +60,7 @@ JDK 1.8 和之前的版本略有不同，我们这里以 JDK 1.7 和 JDK 1.8 这
 
 栈由一个个栈帧组成，而**每个栈帧中都拥有：局部变量表、操作数栈、动态链接、方法返回地址**。和数据结构上的栈类似，两者都是先进后出的数据结构，只支持出栈和入栈两种操作。
 
-<img src="D:\Data\笔记\java\java.assets\image-20230426162224178.png" alt="image-20230426162224178" style="zoom:67%;" />
+<img src="./java.assets/image-20230426162224178.png" alt="image-20230426162224178" style="zoom:67%;" />
 
 **局部变量表**
 
@@ -74,7 +74,7 @@ JDK 1.8 和之前的版本略有不同，我们这里以 JDK 1.7 和 JDK 1.8 这
 
 主要服务一个方法需要调用其他方法的场景。Class 文件的常量池里保存有大量的符号引用比如方法引用的符号引用。当一个方法要调用其他方法，需要将常量池中指向方法的符号引用转化为其在内存地址中的直接引用。动态链接的作用就是为了将符号引用转换为调用方法的直接引用，这个过程也被称为 **动态连接** 。
 
-![img](D:\Data\笔记\java\java.assets\jvmimage-20220331175738692.png)
+![img](./java.assets/jvmimage-20220331175738692.png)
 
 栈空间虽然不是无限的，但一般正常调用的情况下是不会出现问题的。不过，如果函数调用陷入无限循环的话，就会导致栈中被压入太多栈帧而占用太多空间，导致栈空间过深。那么当线程请求栈的深度超过当前 Java 虚拟机栈的最大深度的时候，就抛出 `StackOverFlowError` 错误。
 
@@ -119,7 +119,7 @@ Java 堆是垃圾收集器管理的主要区域，因此也被称作 **GC 堆（
 
 下图所示的 Eden 区、两个 Survivor 区 S0 和 S1 都属于新生代，中间一层属于老年代，最下面一层属于永久代。
 
-![堆内存结构](D:\Data\笔记\java\java.assets\hotspot-heap-structure.png)
+![堆内存结构](./java.assets/hotspot-heap-structure.png)
 
 **JDK 8 版本之后 PermGen（永久代） 已被 Metaspace（元空间）取代，元空间使用的是本地内存。**。
 
@@ -143,7 +143,7 @@ Java 堆是垃圾收集器管理的主要区域，因此也被称作 **GC 堆（
 
 方法区和永久代以及元空间的关系很像 Java 中接口和类的关系，类实现了接口，这里的类就可以看作是永久代和元空间，接口可以看作是方法区，也就是说永久代以及元空间是 HotSpot 虚拟机对虚拟机规范中方法区的两种实现方式。并且，永久代是 JDK 1.8 之前的方法区实现，JDK 1.8 及以后方法区的实现变成了元空间。
 
-![HotSpot 虚拟机方法区的两种实现](D:\Data\笔记\java\java.assets\method-area-implementation.png)
+![HotSpot 虚拟机方法区的两种实现](./java.assets/method-area-implementation.png)
 
 **为什么要将永久代 (PermGen) 替换为元空间 (MetaSpace) 呢?**
 
@@ -185,7 +185,7 @@ Class 文件中除了有类的版本、字段、方法、接口等描述信息�
 
 字面量是源代码中的固定值的表示法，即通过字面我们就能知道其值的含义。字面量包括整数、浮点数和字符串字面量。常见的符号引用包括类符号引用、字段符号引用、方法符号引用、接口方法符号。
 
-![符号引用和直接引用](D:\Data\笔记\java\java.assets\symbol-reference-and-direct-reference.png)
+![符号引用和直接引用](./java.assets/symbol-reference-and-direct-reference.png)
 
 常量池表会在类加载后存放到方法区的运行时常量池中。
 
@@ -216,7 +216,7 @@ JDK1.7 之前，字符串常量池存放在永久代。JDK1.7 字符串常量池
 >
 >在 JDK1.7 中，字符串常量池和静态变量被移到堆中，使得其生命周期可以更好地控制，同时也提高了垃圾回收器的效率。虽然这种改变增加了堆的压力，但可以通过调整堆大小来平衡内存使用，而不像以前那样需要调整 PermGen 大小。
 
-![image-20230426165517167](D:\Data\笔记\java\java.assets\image-20230426165517167.png)
+![image-20230426165517167](./java.assets/image-20230426165517167.png)
 
 #### （8）直接内存
 
@@ -298,13 +298,13 @@ JDK1.4 中新加入的 **NIO（Non-Blocking I/O，也被称为New I/O）**，引
 
 如果使用句柄的话，那么 Java 堆中将会划分出一块内存来作为句柄池，reference 中存储的就是对象的句柄地址，而句柄中包含了对象实例数据与对象类型数据各自的具体地址信息。
 
-![对象的访问定位-使用句柄](D:\Data\笔记\java\java.assets\access-location-of-object-handle.png)
+![对象的访问定位-使用句柄](./java.assets/access-location-of-object-handle.png)
 
 **直接指针**
 
 如果使用直接指针访问，reference 中存储的直接就是对象的地址。
 
-![对象的访问定位-直接指针](D:\Data\笔记\java\java.assets\access-location-of-object-handle-direct-pointer.png)
+![对象的访问定位-直接指针](./java.assets/access-location-of-object-handle-direct-pointer.png)
 
 这两种对象访问方式各有优势。使用句柄来访问的最大好处是 reference 中存储的是稳定的句柄地址，在对象被移动时只会改变句柄中的实例数据指针，而 reference 本身不需要修改。使用直接指针访问方式最大的好处就是速度快，它节省了一次指针定位的时间开销。
 
@@ -314,7 +314,7 @@ HotSpot 虚拟机主要使用的就是这种方式来进行对象访问。
 
 ## 二、Java 集合
 
-![img](D:\Data\笔记\java\java.assets\java-collection-hierarchy.png)
+![img](./java.assets/java-collection-hierarchy.png)
 
 ### 1. List、Set、Queue、Map 四者的区别
 
@@ -642,7 +642,7 @@ JDK1.7 的 `ConcurrentHashMap` 底层采用 **分段的数组+链表** 实现，
 
 - 在 JDK1.7 的时候，`ConcurrentHashMap` 对整个桶数组进行了分割分段（Segment`，分段锁），每一把锁只锁容器其中一部分数据，多线程访问容器里不同数据段的数据，就不会存在锁竞争，提高并发访问率。
 
-  ![Java7 ConcurrentHashMap 存储结构](D:\Data\笔记\java\java.assets\java7_concurrenthashmap.png)
+  ![Java7 ConcurrentHashMap 存储结构](./java.assets/java7_concurrenthashmap.png)
 
 - 到了 JDK1.8 的时候，`ConcurrentHashMap` 已经摒弃了 `Segment` 的概念，而是直接用 `Node` 数组+链表+红黑树的数据结构来实现，并发控制使用 `synchronized` 和 CAS 来操作。（JDK1.6 以后 `synchronized` 锁做了很多优化） 整个看起来就像是优化过且线程安全的 `HashMap`，虽然在 JDK1.8 中还能看到 `Segment` 的数据结构，但是已经简化了属性，只是为了兼容旧版本
 
@@ -652,7 +652,7 @@ JDK1.7 的 `ConcurrentHashMap` 底层采用 **分段的数组+链表** 实现，
   >
   > CAS 指令执行时，当且仅当内存地址 V 的值与预期值 A 相等时，将内存地址 V 的值修改为 B，否则就什么都不做。整个比较并替换的操作是一个原子操作。
 
-  ![Java8 ConcurrentHashMap 存储结构](D:\Data\笔记\java\java.assets\java8_concurrenthashmap.png)
+  ![Java8 ConcurrentHashMap 存储结构](./java.assets/java8_concurrenthashmap.png)
 
 - **`Hashtable`（同一把锁）** :使用 `synchronized` 来保证线程安全，效率非常低下。当一个线程访问同步方法时，其他线程也访问同步方法，可能会进入阻塞或轮询状态，如使用 put 添加元素，另一个线程不能使用 put 添加元素，也不能使用 get，竞争会越来越激烈效率越低。
 

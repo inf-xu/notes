@@ -42,7 +42,7 @@
 
 ## 二、MySQL是如何执行一条SQL的？具体步骤有哪些？
 
-![img](D:\Data\笔记\mysql\mysql.assets\13526879-3037b144ed09eb88.png)
+![img](./mysql.assets/13526879-3037b144ed09eb88.png)
 
 MySQL内部构造可以分为**服务器**和**存储引擎**：
 
@@ -478,11 +478,11 @@ B+Tree 和 Hash 表
 
 **聚簇索引（主键索引）**：**索引结构和数据一起存放的索引**，InnoDB 中的主键索引就属于聚簇索引，**一个表只能有一个聚簇索引**。
 
-![img](D:\Data\笔记\mysql\mysql.assets\cluster-index.png)
+![img](./mysql.assets/cluster-index.png)
 
 **非聚簇索引（也叫辅助索引或二级索引）**：**索引结构和数据分开存放的索引**。MySQL 的 MyISAM 引擎，不管主键还是非主键，使用的都是非聚簇索引。
 
-![img](D:\Data\笔记\mysql\mysql.assets\no-cluster-index.png)
+![img](./mysql.assets/no-cluster-index.png)
 
 #### （3）主键索引、唯一索引、普通索引、前缀索引
 
@@ -610,13 +610,13 @@ like 的方式进行查询，在 `like "value%"` 可以使用索引，但是对�
 
 **如果一个事务「读到」了另一个「未提交事务修改过的数据」，就意味着发生了「脏读」现象。**
 
-![图片](D:\Data\笔记\mysql\mysql.assets\10b513008ea35ee880c592a88adcb12f.png)
+![图片](./mysql.assets/10b513008ea35ee880c592a88adcb12f.png)
 
 #### （2）不可重复读
 
 **在一个事务内多次读取同一个数据，如果出现前后两次读到的数据不一样的情况，就意味着发生了「不可重复读」现象。**
 
-![图片](D:\Data\笔记\mysql\mysql.assets\f5b4f8f0c0adcf044b34c1f300a95abf.png)
+![图片](./mysql.assets/f5b4f8f0c0adcf044b34c1f300a95abf.png)
 
 #### （3）幻读
 
@@ -626,7 +626,7 @@ like 的方式进行查询，在 `like "value%"` 可以使用索引，但是对�
 >
 > **不可重复读的重点是修改，幻读的重点在于新增或者删除**
 
-![图片](D:\Data\笔记\mysql\mysql.assets\d19a1019dc35dfe8cfe7fbff8cd97e31.png)
+![图片](./mysql.assets/d19a1019dc35dfe8cfe7fbff8cd97e31.png)
 
 ### 2. 事务的隔离级别
 
@@ -637,7 +637,7 @@ SQL 标准提出了四种隔离级别来规避这些现象，隔离级别越高�
 - **可重复读（repeatable read）**，就是对一个记录读取多次的记录是相同的，比如对于一个数A读取的话一直是A，前后两次读取的A是一致的，**MySQL InnoDB 引擎的默认隔离级别**；
 - **串行化（serializable）**；会对记录加上读写锁，在多个事务对这条记录进行读写操作时，如果发生了读写冲突的时候，后访问的事务必须等前一个事务执行完成，才能继续执行；
 
-![图片](D:\Data\笔记\mysql\mysql.assets\4e98ea2e60923b969790898565b4d643.png)
+![图片](./mysql.assets/4e98ea2e60923b969790898565b4d643.png)
 
 MySQL InnoDB 引擎的默认隔离级别虽然是「可重复读」，但是它很大程度上避免幻读现象（并不是完全解决了，，解决的方案有两种：
 

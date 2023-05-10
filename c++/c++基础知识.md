@@ -67,7 +67,7 @@ typedef unsigned int            uint32_t;
 
 ### 1. GCC 工作流程
 
-![image-20230322212020075](D:\Data\笔记\c++\c++基础知识.assets\image-20230322212020075.png)
+![image-20230322212020075](./c++基础知识.assets/image-20230322212020075.png)
 
 ### 2. GCC 编译选项
 
@@ -152,7 +152,7 @@ gcc 和 g++ 都是 GNU（组织）的一个编译器。
 
 **静态库的制作**
 
-<img src="D:\Data\笔记\c++\c++基础知识.assets\image-20230323163110332.png" alt="image-20230323163110332" style="zoom:67%;" />
+<img src="./c++基础知识.assets/image-20230323163110332.png" alt="image-20230323163110332" style="zoom:67%;" />
 
 - gcc 获得 .o 文件
 
@@ -189,13 +189,13 @@ gcc 和 g++ 都是 GNU（组织）的一个编译器。
   gcc -shared a.o b.o -o libcalc.so
   ```
 
-<img src="D:\Data\笔记\c++\c++基础知识.assets\image-20230323163144929.png" alt="image-20230323163144929" style="zoom:67%;" />
+<img src="./c++基础知识.assets/image-20230323163144929.png" alt="image-20230323163144929" style="zoom:67%;" />
 
 ### 4. 静态库和动态库的对比
 
 **程序编译成可执行程序的过程**
 
-<img src="D:\Data\笔记\c++\c++基础知识.assets\image-20230323162838236.png" alt="image-20230323162838236" style="zoom: 67%;" />
+<img src="./c++基础知识.assets/image-20230323162838236.png" alt="image-20230323162838236" style="zoom: 67%;" />
 
 **静态库的优缺点**
 
@@ -206,7 +206,7 @@ gcc 和 g++ 都是 GNU（组织）的一个编译器。
   - 消耗系统资源，浪费内存
   - 更新、部署、发布麻烦
 
-<img src="D:\Data\笔记\c++\c++基础知识.assets\image-20230323171354110.png" alt="image-20230323171354110" style="zoom:67%;" />
+<img src="./c++基础知识.assets/image-20230323171354110.png" alt="image-20230323171354110" style="zoom:67%;" />
 
 **动态库的优缺点**
 
@@ -218,7 +218,7 @@ gcc 和 g++ 都是 GNU（组织）的一个编译器。
   - 加载速度比静态库慢
   - 发布程序时需要提供依赖的动态库
 
-<img src="D:\Data\笔记\c++\c++基础知识.assets\image-20230323171909546.png" alt="image-20230323171909546" style="zoom:67%;" />
+<img src="./c++基础知识.assets/image-20230323171909546.png" alt="image-20230323171909546" style="zoom:67%;" />
 
 
 
@@ -266,15 +266,15 @@ makefile 或者 Makefile
 
 **变量**
 
-![image-20230324142135991](D:\Data\笔记\c++\c++基础知识.assets\image-20230324142135991.png)
+![image-20230324142135991](./c++基础知识.assets/image-20230324142135991.png)
 
-![image-20230324142152849](D:\Data\笔记\c++\c++基础知识.assets\image-20230324142152849.png)
+![image-20230324142152849](./c++基础知识.assets/image-20230324142152849.png)
 
 **函数**
 
-![image-20230324142215289](D:\Data\笔记\c++\c++基础知识.assets\image-20230324142215289.png)
+![image-20230324142215289](./c++基础知识.assets/image-20230324142215289.png)
 
-![image-20230324142228079](D:\Data\笔记\c++\c++基础知识.assets\image-20230324142228079.png)
+![image-20230324142228079](./c++基础知识.assets/image-20230324142228079.png)
 
 
 
@@ -303,11 +303,11 @@ gcc -g -Wall program.c -o program
 
 ### 3. GDB 命令
 
-![image-20230324160642804](D:\Data\笔记\c++\c++基础知识.assets\image-20230324160642804.png)
+![image-20230324160642804](./c++基础知识.assets/image-20230324160642804.png)
 
-![image-20230324160652841](D:\Data\笔记\c++\c++基础知识.assets\image-20230324160652841.png)
+![image-20230324160652841](./c++基础知识.assets/image-20230324160652841.png)
 
-![image-20230324160709122](D:\Data\笔记\c++\c++基础知识.assets\image-20230324160709122.png)
+![image-20230324160709122](./c++基础知识.assets/image-20230324160709122.png)
 
 
 
@@ -315,19 +315,19 @@ gcc -g -Wall program.c -o program
 
 ### 1. 标准 C 库 IO
 
-![image-20230326133451378](D:\Data\笔记\c++\c++基础知识.assets\image-20230326133451378.png)
+![image-20230326133451378](./c++基础知识.assets/image-20230326133451378.png)
 
 ### 2. 标准 C 库 IO 和 Linux 系统 IO 的关系
 
-![image-20230326133517670](D:\Data\笔记\c++\c++基础知识.assets\image-20230326133517670.png)
+![image-20230326133517670](./c++基础知识.assets/image-20230326133517670.png)
 
 ### 3. 虚拟地址空间
 
-![image-20230326133606718](D:\Data\笔记\c++\c++基础知识.assets\image-20230326133606718.png)
+![image-20230326133606718](./c++基础知识.assets/image-20230326133606718.png)
 
 ### 4. 文件描述符
 
-![image-20230326133634157](D:\Data\笔记\c++\c++基础知识.assets\image-20230326133634157.png)
+![image-20230326133634157](./c++基础知识.assets/image-20230326133634157.png)
 
 ### 5. 常用函数
 
@@ -491,7 +491,7 @@ int lstat(const char *pathname, struct stat *statbuf);
         失败：返回-1 设置errno
 ```
 
-![image-20230402164740400](D:\Data\笔记\c++\c++基础知识.assets\image-20230402164740400.png)
+![image-20230402164740400](./c++基础知识.assets/image-20230402164740400.png)
 
 **文件属性操作函数**
 
@@ -722,7 +722,7 @@ int fcntl(int fd, int cmd, ...);
 - 并行（parallel）：指在同一时刻，有多条指令在多个处理器上同时执行。
 - 并发（concurrency）：指在同一时刻只能有一条指令执行，但多个进程指令被快速的轮换执行，使得在宏观上具有多个进程同时执行的效果，但在微观上并不是同时执行的，只是把时间分成若干段，使多个进程快速交替的执行。
 
-<img src="D:\Data\笔记\c++\c++基础知识.assets\image-20230407144950859.png" alt="image-20230407144950859" style="zoom:67%;" />
+<img src="./c++基础知识.assets/image-20230407144950859.png" alt="image-20230407144950859" style="zoom:67%;" />
 
 ### 5. 进程控制块 PCB
 
@@ -755,9 +755,9 @@ int fcntl(int fd, int cmd, ...);
 
 在五态模型 中，进程分为新建态、就绪态，运行态，阻塞态，终止态。
 
-<img src="D:\Data\笔记\c++\c++基础知识.assets\image-20230407151036055.png" alt="image-20230407151036055" style="zoom:80%;" />
+<img src="./c++基础知识.assets/image-20230407151036055.png" alt="image-20230407151036055" style="zoom:80%;" />
 
-<img src="D:\Data\笔记\c++\c++基础知识.assets\image-20230407151102597.png" alt="image-20230407151102597" style="zoom:80%;" />
+<img src="./c++基础知识.assets/image-20230407151102597.png" alt="image-20230407151102597" style="zoom:80%;" />
 
 ```shell
 # 查看进程

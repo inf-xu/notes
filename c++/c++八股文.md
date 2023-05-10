@@ -1819,7 +1819,7 @@ private 继承 + private 成员 => 不可见
 
 例如：32bit 的数字 0x12345678
 
-![image-20230316202148816](D:\Data\笔记\c++\c++八股文.assets\image-20230316202148816.png)
+![image-20230316202148816](./c++八股文.assets/image-20230316202148816.png)
 
 ```cpp
 #include <iostream>
@@ -2111,7 +2111,7 @@ int fun() throw(int,double,A,B,C) {...};
 
 C++ 标准库中有一些类代表异常，这些类都是从 exception 类派生而来的，如下图：
 
-<img src="D:\Data\笔记\c++\c++八股文.assets\image-20230317112023672.png" alt="image-20230317112023672" style="zoom:67%;" />
+<img src="./c++八股文.assets/image-20230317112023672.png" alt="image-20230317112023672" style="zoom:67%;" />
 
 - bad_typeid：使用 typeid 运算符，如果其操作数是一个多态类的指针，而该指针的值为 NULL，则会拋出此异常
 
@@ -3679,7 +3679,7 @@ void main() {
 - Stack 是程序中的局部变量，栈向下，向低地址方向增长
 - Heap 是 malloc 调用动态分配的内存，堆向上，向向高地址方向增长
 
-<img src="D:\Data\笔记\c++\c++八股文.assets\image-20230313101133517.png" alt="image-20230313101133517" style="zoom: 60%;" />
+<img src="./c++八股文.assets/image-20230313101133517.png" alt="image-20230313101133517" style="zoom: 60%;" />
 
 详细参看《[C++ 堆区，栈区，数据段，bss段，代码区](https://blog.csdn.net/JACKSONMHLK/article/details/114392343)》
 
@@ -3687,13 +3687,13 @@ void main() {
 
 **金山 C++ 培训内存分配**
 
-![image-20230401111937899](D:\Data\笔记\c++\c++八股文.assets\image-20230401111937899.png)
+![image-20230401111937899](./c++八股文.assets/image-20230401111937899.png)
 
 
 
 **阿秀的学习笔记**
 
-![img](D:\Data\笔记\c++\c++八股文.assets\202205220021689.png)
+![img](./c++八股文.assets/202205220021689.png)
 
 
 
@@ -3721,7 +3721,7 @@ C++ 程序默认的内存管理（new，delete，malloc，free）会频繁地在
 
 如图所示：
 
-![image-20230401114052008](D:\Data\笔记\c++\c++八股文.assets\image-20230401114052008.png)
+![image-20230401114052008](./c++八股文.assets/image-20230401114052008.png)
 
 ### 4.《STL源码剖析》中的内存池实现机制
 
@@ -3949,9 +3949,9 @@ RAII 全称是 “Resource Acquisition is Initialization”，直译过来是 �
 - 对一个对象进行赋值时，赋值操作符减少左操作数所指对象的引用计数（如果引用计数为减至 0，则删除对象），并增加右操作数所指对象的引用计数
 - 调用析构函数时，构造函数减少引用计数（如果引用计数减至 0，则删除基础对象）
 
-<img src="D:\Data\笔记\c++\c++八股文.assets\image-20230407113015856.png" alt="image-20230407113015856" style="zoom:67%;" />
+<img src="./c++八股文.assets/image-20230407113015856.png" alt="image-20230407113015856" style="zoom:67%;" />
 
-<img src="D:\Data\笔记\c++\c++八股文.assets\image-20230407113038024.png" alt="image-20230407113038024" style="zoom:67%;" />
+<img src="./c++八股文.assets/image-20230407113038024.png" alt="image-20230407113038024" style="zoom:67%;" />
 
 ```cpp
 // 智能指针 shared_ptr 代码实现
@@ -4227,7 +4227,7 @@ template<> struct __type_traits<Shape>{
 
 空间配置器是操作系统开辟的一大段内存空间。STL 需要扩容申请内存时，就从空间配置器中申请，不需要再经过操作系统。并且，它还能回收释放的空间，供下一次使用。一个进程中有一个空间配置器，进程中所有容器需要的空间都到对应空间配置器申请。进程终止，对应空间配置器空间释放。
 
-![image-20230407142835731](D:\Data\笔记\c++\c++八股文.assets\image-20230407142835731.png)
+![image-20230407142835731](./c++八股文.assets/image-20230407142835731.png)
 
 优点如下：
 
@@ -4269,7 +4269,7 @@ SGI-STL 采用了**内存池**的技术来提高申请空间的速度以及减�
 
 我们的内存块是像链表一样连接起来的，这样就必然需要指针来维护， 32 位平台下指针 4 字节，64 位平台下指针 8 字节，所以内存块最小也要能存放一个指针。但是这样造成了内存碎片问题
 
-<img src="D:\Data\笔记\c++\c++八股文.assets\4cc2ac430798434093b2240b032e101e.png" alt="4cc2ac430798434093b2240b032e101e.png" style="zoom:67%;" />
+<img src="./c++八股文.assets/4cc2ac430798434093b2240b032e101e.png" alt="4cc2ac430798434093b2240b032e101e.png" style="zoom:67%;" />
 
 大致流程：
 
@@ -4424,7 +4424,7 @@ int main() {
 
 **虚表指针**：在含有虚函数的类实例化对象时，**对象地址的前四个字节存储的指向虚表的指针**
 
-<img src="D:\Data\笔记\c++\c++八股文.assets\image-20230417204619490.png" alt="image-20230417204619490" style="zoom:67%;" />
+<img src="./c++八股文.assets/image-20230417204619490.png" alt="image-20230417204619490" style="zoom:67%;" />
 
 上图中展示了虚表和虚表指针在基类对象和派生类对象中的模型，下面阐述实现多态的过程：
 
@@ -4438,7 +4438,7 @@ int main() {
 
   这样指向派生类的基类指针在运行时，就可以根据派生类对虚函数重写情况动态的进行调用，从而实现多态性。
 
-![img](D:\Data\笔记\c++\c++八股文.assets\06b520a599182cde65179ef06c103f05.jpg)
+![img](./c++八股文.assets/06b520a599182cde65179ef06c103f05.jpg)
 
 
 
